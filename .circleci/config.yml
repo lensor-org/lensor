@@ -9,17 +9,21 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: deps-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+        - pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+        - pip-packages-v1-{{ .Branch }}-
+        - pip-packages-v1-
       - run:
-          name: install dependencies
+          name: Install Dependencies
           command: |
             pip install pipenv
             pipenv install --system --deploy
       - save_cache:
-          key: deps-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          key: pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
-            - ".venv"
+            - "~/.cache/pip"
+            - "~/.cache/pipenv"
+            - /usr/local/lib/python3.7/site-packages
       - run:
-          name: run linter
+          name: Run Linter
           command: |
             flake8 --exclude=.venv* --statistics
