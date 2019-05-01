@@ -11,6 +11,7 @@ function WriteHash($hash) {
 function UpdateDeps {
     Write-Host -fore yellow "Updating dependencies..."
     Push-Location ($PSScriptRoot + "\..")
+    # TODO check exit code of docker build
     docker build --target dev --build-arg CACHEBUST=$((Get-Date).Ticks) -t lensor-dev .
     Pop-Location
 }

@@ -14,7 +14,7 @@ def processImage(image):
     # Create thumbnail
     thumbnail_pil = createThumbnail(input_file=image, size=(256, 256))
     # Save thumbnail TODO return to response
-    thumbnail_pil.save("./temp/thumbnail.jpg", "JPEG")
+    #thumbnail_pil.save("./temp/thumbnail.jpg", "JPEG")
 
     # File information (exif...)
     exif_tags = read_exif(image)
