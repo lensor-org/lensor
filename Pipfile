@@ -9,6 +9,10 @@ verify_ssl = true
 pillow = "*"
 exifread = "*"
 face-recognition = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+prepare = "flake8 --install-hook git"
