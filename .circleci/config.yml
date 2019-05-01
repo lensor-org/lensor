@@ -23,7 +23,6 @@ jobs:
           paths:
             - "~/.cache/pip"
             - "~/.cache/pipenv"
-            - /usr/local/lib/python3.7/site-packages
       - run:
           name: Run Linter
           command: |
