@@ -4,9 +4,9 @@
 
 * [About](#about)
   * [Built With](#built-with)
-* [Setup](#setup)
-  * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
+* [Development Setup](#development-setup)
+  * [Manually](#manually)
+  * [Docker](#docker)
 * [Usage](#usage)
 * [Contributing](#contributing)
 * [License](#license)
@@ -19,20 +19,26 @@ TODO Description
 
 TODO
 
-## Setup
+## Development Setup
 
-### Prerequisites
+### Manually
 
-1. Install Python3 with pip
-2. Install pipenv with `pip install pipenv`
+> Note: On Windows we recommend using docker, as face_recognition is not officially supported there.
 
-### Installation
+1. Install Python3 including pip
+2. Install dlib as explained [here](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf)
+3. Install pipenv with `pip install pipenv`
+4. Run `pipenv install` in the project directory.
+5. Start with `python main.py`
 
-Run `pipenv install` in the project directory.
+### Docker
+
+1. Install Docker
+2. Run `scripts/docker-dev.ps1` (Windows) / `scripts/docker-dev.sh` (Linux)
 
 ## Usage
 
-TODO
+TODO Deployment & Docs
 
 ## Contributing
 
