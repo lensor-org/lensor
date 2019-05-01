@@ -21,6 +21,9 @@ TODO
 
 ## Development Setup
 
+First, set the environment variable `PIPENV_VENV_IN_PROJECT=1`.
+This will create the virtual environment under the project folder.
+
 ### Manually
 
 > Note: On Windows we recommend using docker, as face_recognition is not officially supported there.
