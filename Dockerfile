@@ -4,6 +4,7 @@
 #
 ###############
 FROM kombustor/python3-dlib as dev
+
 # Copying pipenv relevant files
 COPY ./Pipfile /app/
 COPY ./Pipfile.lock /app/
