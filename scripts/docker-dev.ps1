@@ -18,7 +18,7 @@ function UpdateDeps {
 function RunApp {
     Write-Host -fore yellow "Running app..."
     Push-Location ($PSScriptRoot + "\..")
-    docker run --rm -w "/app" -v ${PWD}:/app lensor-dev python init.py
+    docker run --rm -w "/app" -v ${PWD}:/app lensor-dev python main.py
     Pop-Location
 }
 
