@@ -13,7 +13,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            sudo pip install pipenv
+            pip install pipenv
             pipenv install --system --deploy
       - save_cache:
           key: deps-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
