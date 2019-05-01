@@ -9,9 +9,10 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        - pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
-        - pip-packages-v1-{{ .Branch }}-
-        - pip-packages-v1-
+        keys:
+          - pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          - pip-packages-v1-{{ .Branch }}-
+          - pip-packages-v1-
       - run:
           name: Install Dependencies
           command: |
