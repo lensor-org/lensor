@@ -10,6 +10,8 @@ pillow = "*"
 exifread = "*"
 face-recognition = "*"
 flake8 = "*"
+pytest = "*"
+pytest-cov = "*"
 
 [requires]
 python_version = "3.7"

@@ -28,3 +28,10 @@ jobs:
           name: Run Linter
           command: |
             flake8 --exclude=.venv* --statistics
+      - run:
+          name: Run Tests
+          command: |
+            pytest -v --cov=lensor --junitxml=test-reports/junit.xml
+
+      - store_test_results:
+          path: test-reports
