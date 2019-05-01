@@ -1,6 +1,6 @@
 Push-Location $PSScriptRoot
-$depsFile = Resolve-Path -Path ../Pipfile
-$hashFile = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("../Pipfile.hash")
+$depsFile = Resolve-Path -Path ../Pipfile.lock
+$hashFile = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("../Pipfile.lock.hash")
 Pop-Location
 
 function WriteHash($hash) {
@@ -11,14 +11,14 @@ function WriteHash($hash) {
 function UpdateDeps {
     Write-Host -fore yellow "Updating dependencies..."
     Push-Location ($PSScriptRoot + "\..")
-    docker build -f Dockerfile.dev -t lensor .
+    docker build --target dev --build-arg CACHEBUST=$((Get-Date).Ticks) -t lensor-dev .
     Pop-Location
 }
 
 function RunApp {
     Write-Host -fore yellow "Running app..."
     Push-Location ($PSScriptRoot + "\..")
-    docker run --rm -w "/app" -v ${PWD}:/app lensor python init.py
+    docker run --rm -w "/app" -v ${PWD}:/app lensor-dev python init.py
     Pop-Location
 }
 
