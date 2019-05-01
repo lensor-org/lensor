@@ -13,6 +13,7 @@ writeHash() {
 updateDeps() {
     echo "Updating dependencies...";
     cd "$scriptPath/.." # Sets workdir to ../ relative to script
+    # TODO check exit code of docker build
     docker build --target dev --build-arg CACHEBUST=$(date +%s) -t lensor-dev .
 }
 

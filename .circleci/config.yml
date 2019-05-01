@@ -3,25 +3,34 @@ jobs:
   build:
     docker:
       - image: kombustor/python3-dlib
-        environment:
-          PIPENV_VENV_IN_PROJECT: true
 
     working_directory: ~/repo
 
     steps:
       - checkout
       - restore_cache:
-          key: deps-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          keys:
+            - pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+            - pip-packages-v1-{{ .Branch }}-
+            - pip-packages-v1-
       - run:
-          name: install dependencies
+          name: Install Dependencies
           command: |
             pip install pipenv
-            pipenv install
+            pipenv install --system --deploy
       - save_cache:
-          key: deps-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          key: pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
-            - ".venv"
+            - "~/.cache/pip"
+            - "~/.cache/pipenv"
       - run:
-          name: run linter
+          name: Run Linter
           command: |
             flake8 --exclude=.venv* --statistics
+      - run:
+          name: Run Tests
+          command: |
+            pytest -v --cov=lensor --junitxml=test-reports/junit.xml
+
+      - store_test_results:
+          path: test-reports

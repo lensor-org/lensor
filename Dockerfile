@@ -4,10 +4,13 @@
 #
 ###############
 FROM kombustor/python3-dlib as dev
+
 # Copying pipenv relevant files
 COPY ./Pipfile /app/
 COPY ./Pipfile.lock /app/
 WORKDIR /app
+
+RUN apk add jpeg-dev zlib-dev
 
 # Installing pipenv
 RUN pip install pipenv

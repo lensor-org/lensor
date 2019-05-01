@@ -1,4 +1,4 @@
-from lensor.processors.thumbnail import create as createThumbnail
+# from lensor.processors.thumbnail import create as createThumbnail
 from lensor.processors.exif import read_exif
 from lensor.processors.faces import show_faces
 
@@ -12,9 +12,9 @@ def run():
 def processImage(image):
     # Thumbnail
     # Create thumbnail
-    thumbnail_pil = createThumbnail(input_file=image, size=(256, 256))
+    # thumbnail_pil = createThumbnail(input_file=image, size=(256, 256))
     # Save thumbnail TODO return to response
-    thumbnail_pil.save("./temp/thumbnail.jpg", "JPEG")
+    # thumbnail_pil.save("./temp/thumbnail.jpg", "JPEG")
 
     # File information (exif...)
     exif_tags = read_exif(image)
