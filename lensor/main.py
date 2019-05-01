@@ -1,4 +1,4 @@
-from lensor.processors.thumbnail import create as createThumbnail
+# from lensor.processors.thumbnail import create as createThumbnail
 from lensor.processors.exif import read_exif
 from lensor.processors.faces import show_faces
 
