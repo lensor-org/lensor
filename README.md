@@ -31,7 +31,7 @@ This will create the virtual environment under the project folder.
 1. Install Python3 including pip
 2. Install pipenv with `pip install pipenv`
 3. Run `pipenv run prepare` after installing pipenv to install the git hook.
-4. Run `pipenv install` in the project directory.
+4. Run `pipenv install --dev` in the project directory.
 
 ### Dlib: Manually
 
