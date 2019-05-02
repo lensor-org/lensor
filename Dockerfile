@@ -17,7 +17,7 @@ COPY ./Pipfile.lock /app/
 WORKDIR /app
 
 # Installing dependencies to system
-RUN pipenv install --system --deploy --ignore-pipfile
+RUN pipenv install --dev --system --deploy --ignore-pipfile
 
 ############### 
 #
