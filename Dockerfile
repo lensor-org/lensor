@@ -3,27 +3,26 @@
 # Development
 #
 ###############
-FROM kombustor/python3-dlib as dev
-
-# Copying pipenv relevant files
-COPY ./Pipfile /app/
-COPY ./Pipfile.lock /app/
-WORKDIR /app
+FROM kombustor/python3-dlib:stretch as dev
 
 # Installing pipenv
 RUN pip install pipenv
 
-# Allowing to disable caching from here on
+# Allowing to disable caching from here on by setting the CACHEBUST build-variable to a random value
 ARG CACHEBUST=1
 
-# Installing dependencies to system python
-RUN pipenv install --system --deploy
+# Copying pipenv files
+COPY ./Pipfile /app/
+COPY ./Pipfile.lock /app/
+WORKDIR /app
 
+# Installing dependencies to system
+RUN pipenv install --system --deploy --ignore-pipfile
 
 ############### 
 #
 # Production
 #
 ###############
-FROM base as prod 
-# TODO
+# FROM kombustor/python3-dlib 
+# TODO extract python deps to requirements.txt and install via standard pip instead of creating a venv
