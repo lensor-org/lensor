@@ -7,4 +7,4 @@ def read_exif(file):
     # Read GPS data if available (GPS GPSLatitude, GPS GPSLongitude),
     # original time captured (EXIF DateTimeOriginal)
 
-    print(tags.keys())
+    print(tags)
