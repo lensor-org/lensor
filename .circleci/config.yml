@@ -17,7 +17,7 @@ jobs:
           name: Install Dependencies
           command: |
             pip install pipenv
-            pipenv install --system --deploy
+            pipenv install --dev --system --deploy
       - save_cache:
           key: pip-packages-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
           paths:
