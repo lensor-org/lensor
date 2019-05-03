@@ -1,0 +1,11 @@
+{
+    "dockerFile": "Dockerfile",
+    "context": "..",
+    "postCreateCommand": "pipenv --site-packages install --dev",
+    "extensions": [
+        "ms-python.python",
+        "bierner.markdown-preview-github-styles",
+        "christian-kohler.path-intellisense",
+        "mutantdino.resourcemonitor"
+    ]
+}
