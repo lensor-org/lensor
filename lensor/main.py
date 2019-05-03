@@ -6,7 +6,7 @@ from io import BytesIO
 
 
 def run():
-    image_file = open('./lensor/processors/example_faces.jpg', 'r+b')
+    image_file = open('./lensor/processors/example.jpg', 'r+b')
 
     processImage(image=image_file)
 
