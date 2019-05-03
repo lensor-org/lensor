@@ -11,7 +11,11 @@ def read_exif(input_file):
     gps_info = decode_gps_info(exif)
 
     exif_info = {
-        'timestamp': datetime_to_timestamp(exif.get("DateTimeOriginal")) if "DateTimeOriginal" in exif else None,
+        'timestamp': (
+            datetime_to_timestamp(exif.get("DateTimeOriginal"))
+            if "DateTimeOriginal" in exif
+            else None
+        ),
         'width': exif.get("ExifImageWidth", image.width),
         'height': exif.get("ExifImageHeight", image.height),
         'gps': get_lat_lon(gps_info)
