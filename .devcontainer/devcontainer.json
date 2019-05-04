@@ -8,6 +8,7 @@
     ],
     "postCreateCommand": "pipenv --site-packages install --dev",
     "dockerComposeFile": "./docker-compose.yml",
+    "workspaceFolder": "/workspace",
     "service" : "lensor",
     "shutdownAction": "stopCompose"
 }
