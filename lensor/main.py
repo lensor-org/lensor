@@ -1,30 +1,10 @@
-# from lensor.processors.thumbnail import create as createThumbnail
-from lensor.processors.exif import read_exif
-from lensor.processors.faces import show_faces
+from lensor.processing.imageinfo import ImageInfo
 
 
 def run():
-    image_file = open('./lensor/processors/example.jpg', 'r+b')
+    image_file = open('./lensor/processing/examples/example.jpg', 'r+b')
 
-    processImage(image=image_file)
+    image_info = ImageInfo(image_id="temp_id", image=image_file)
+    image_info.process()
 
-
-def processImage(image):
-    # Thumbnail
-    # Create thumbnail
-    # thumbnail_pil = createThumbnail(input_file=image, size=(256, 256))
-    # Save thumbnail TODO return to response
-    # thumbnail_pil.save("./temp/thumbnail.jpg", "JPEG")
-
-    # File information (exif...)
-    exif_tags = read_exif(image)
-    print(exif_tags)
-
-    # Faces
-    show_faces()
-
-    # Scene
-
-    # Location
-
-    # Things
+    print(str(image_info))
