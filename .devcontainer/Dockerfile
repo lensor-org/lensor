@@ -6,4 +6,4 @@ COPY .devcontainer/settings.vscode.json /root/.vscode-remote/data/Machine/settin
 # Installing pipenv
 RUN pip install pipenv
 
-ENV PIPENV_VENV_IN_PROJECT=1
+ENV PIPENV_VENV_IN_PROJECT=1 PIPENV_SITE_PACKAGES=1

@@ -16,7 +16,7 @@ services:
       context: '..'
       dockerfile: .devcontainer/Dockerfile
     restart: unless-stopped
-    command: sleep infinity
+    command: /bin/sh -c "while sleep 1; do :; done"
     depends_on:
       - db
     env_file:
@@ -25,9 +25,7 @@ services:
       - internal
       - external
     volumes:
-      # This is where VS Code should expect to find your project's source code
-      # and the value of "workspaceFolder" in .devcontainer/devcontainer.json
-      - ..:/workspace  
+      - ..:/workspace
 
 volumes:
   db:

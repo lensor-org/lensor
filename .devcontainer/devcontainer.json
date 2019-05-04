@@ -6,7 +6,7 @@
         "christian-kohler.path-intellisense",
         "mutantdino.resourcemonitor"
     ],
-    "postCreateCommand": "pipenv --site-packages install --dev",
+    "postCreateCommand": "cd /workspace && pipenv install --dev",
     "dockerComposeFile": "./docker-compose.yml",
     "workspaceFolder": "/workspace",
     "service" : "lensor",
