@@ -11,7 +11,7 @@ services:
     networks:
       - internal
 
-  app:
+  lensor:
     build:
       context: '..'
       dockerfile: .devcontainer/Dockerfile

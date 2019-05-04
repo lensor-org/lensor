@@ -1,14 +1,13 @@
 {
     "name": "lensor",
-    "dockerComposeFile": "./docker-compose.yml",
-    "context": "..",
-    "postCreateCommand": "pipenv --site-packages install --dev",
-    "service" : "app",
-    "shutdownAction": "stopCompose",
     "extensions": [
         "ms-python.python",
         "bierner.markdown-preview-github-styles",
         "christian-kohler.path-intellisense",
         "mutantdino.resourcemonitor"
-    ]
+    ],
+    "postCreateCommand": "pipenv --site-packages install --dev",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service" : "lensor",
+    "shutdownAction": "stopCompose"
 }
