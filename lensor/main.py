@@ -1,4 +1,4 @@
-from lensor.processors.exif import read_exif
+from lensor.processors.exif import ExifReader
 from lensor.processors.thumbnail import Thumbnail
 # from lensor.processors.faces import show_faces
 
@@ -17,7 +17,8 @@ def processImage(image):
     image_info['thumbnail'] = thumbnail.get_thumbnail_base64()
 
     # File information (exif...)
-    image_info['exif'] = read_exif(image)
+    exif_reader = ExifReader(input_file=image)
+    image_info['exif'] = exif_reader.read_exif()
 
     # Faces
     # show_faces()
