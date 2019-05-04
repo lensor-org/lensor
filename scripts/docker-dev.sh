@@ -20,7 +20,7 @@ updateDeps() {
 runApp() {
     echo "Running app..."
     cd "$scriptPath/.." # Sets workdir to ../ relative to script
-    docker run --rm -w "/app" -v ${PWD}:/app lensor-dev python main.py
+    docker run --rm -w "/app" -v ${PWD}:/app lensor-dev python lensor.py
 }
 
 checkDepsAndRun() {
