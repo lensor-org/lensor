@@ -5,8 +5,6 @@ from datetime import datetime
 def read_exif(input_file):
     image = Image.open(input_file)
 
-    Image.Image
-
     exif = decode_exif_tags(image)
     gps_info = decode_gps_info(exif)
 
