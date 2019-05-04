@@ -36,7 +36,7 @@ TODO
 3. Install dlib as explained [here](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf)
 4. Run `pipenv install --dev` in the project directory.
 5. Run `pipenv run prepare` after installing pipenv to install the git hook.
-6. Start with `pipenv run python main.py`
+6. Start with `pipenv run python lensor.py`
 
 ### Docker
 
@@ -48,7 +48,7 @@ TODO
 1. Follow the official [installation instructions](https://code.visualstudio.com/docs/remote/containers#_installation)
 2. Open the project in VS Code
 3. Use `Ctrl + Shift + P` and run "Reopen Folder in Container"
-5. Start with `pipenv run python main.py`
+5. Start with `pipenv run python lensor.py` (or open the `pipenv shell` and run `python main.py`)
 
 ## Usage
 
