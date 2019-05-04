@@ -4,8 +4,8 @@ from lensor.processing.processors.thumbnail import Thumbnail
 
 class ImageInfo:
 
-    def __init__(self, id, image):
-        self.id = id
+    def __init__(self, image_id, image):
+        self.image_id = image_id
         self.image = image
 
     def process(self):
@@ -24,5 +24,5 @@ class ImageInfo:
 
     def __str__(self):
         return "ImageInfo[id={0}, thumbnail={1}, exif={2}]".format(
-            self.id, self.thumbnail, self.exif
+            self.image_id, self.thumbnail, self.exif
         )
