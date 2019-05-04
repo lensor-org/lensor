@@ -1,7 +1,10 @@
 {
-    "dockerFile": "Dockerfile",
+    "name": "lensor",
+    "dockerComposeFile": "./docker-compose.yml",
     "context": "..",
     "postCreateCommand": "pipenv --site-packages install --dev",
+    "service" : "app",
+    "shutdownAction": "stopCompose",
     "extensions": [
         "ms-python.python",
         "bierner.markdown-preview-github-styles",

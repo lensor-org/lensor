@@ -12,6 +12,7 @@ pytest-cov = "*"
 pillow = "*"
 exifread = "*"
 face-recognition = "*"
+sqlalchemy = "*"
 
 [requires]
 python_version = "3.7"
