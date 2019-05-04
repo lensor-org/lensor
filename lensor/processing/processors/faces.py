@@ -1,5 +1,6 @@
 import face_recognition
-from PIL import Image, ImageDraw
+from PIL import Image
+from PIL import ImageDraw
 
 
 def show_faces():
