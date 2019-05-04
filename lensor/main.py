@@ -1,8 +1,6 @@
 from lensor.processors.exif import read_exif
+from lensor.processors.thumbnail import Thumbnail
 # from lensor.processors.faces import show_faces
-from lensor.processors.thumbnail import create as createThumbnail
-import base64
-from io import BytesIO
 
 
 def run():
@@ -15,11 +13,8 @@ def processImage(image):
     image_info = {}
 
     # Thumbnail
-    thumbnail = createThumbnail(input_file=image, size=(256, 256))
-    # Converting image to base64 string and storing in dict
-    thumbnail_buffer = BytesIO()
-    thumbnail.save(thumbnail_buffer, format="JPEG")
-    image_info['thumbnail'] = base64.b64encode(thumbnail_buffer.getvalue())
+    thumbnail = Thumbnail(input_file=image, size=(256, 256))
+    image_info['thumbnail'] = thumbnail.get_thumbnail_base64()
 
     # File information (exif...)
     image_info['exif'] = read_exif(image)
