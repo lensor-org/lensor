@@ -33,7 +33,7 @@ class ExifReader:
 
         return exif_info
 
-    def _decode_exif_tags(image):
+    def _decode_exif_tags(self, image):
         # Reading and decoding ExifTags using Pillows ExifTags
         exif_info = image._getexif()
         if(exif_info):
@@ -44,7 +44,7 @@ class ExifReader:
             }
         return {}
 
-    def _decode_gps_info(exif_tags):
+    def _decode_gps_info(self, exif_tags):
         gpsinfo = {}
         if ("GPSInfo" in exif_tags):
             for key in exif_tags['GPSInfo'].keys():
@@ -75,7 +75,7 @@ class ExifReader:
             'longitude': longitude
         }
 
-    def _coords_to_degrees(coords):
+    def _coords_to_degrees(self, coords):
         d0 = coords[0][0]
         d1 = coords[0][1]
         d = float(d0) / float(d1)
@@ -90,5 +90,5 @@ class ExifReader:
 
         return d + (m / 60.0) + (s / 3600.0)
 
-    def _datetime_to_timestamp(date):
+    def _datetime_to_timestamp(self, date):
         return datetime.strptime(date, "%Y:%m:%d %H:%M:%S").timestamp()
