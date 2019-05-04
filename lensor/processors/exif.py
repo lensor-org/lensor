@@ -33,8 +33,7 @@ def decode_exif_tags(image):
             for k, v in exif_info.items()
             if k in ExifTags.TAGS
         }
-    else:
-        return {}
+    return {}
 
 
 def decode_gps_info(exif_tags):
