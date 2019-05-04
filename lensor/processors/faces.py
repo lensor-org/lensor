@@ -4,7 +4,7 @@ import numpy as np
 
 
 class FaceDetection:
-    IMAGE_DOWNSCALING_FACTOR = 0.25
+    IMAGE_SCALING_FACTOR = 0.25
     FACE_MATCHING_THRESHOLD = 0.6
 
     def __init__(self, user_id, image_id):
@@ -30,8 +30,8 @@ class FaceDetection:
 
         # make image smaller for faster processing
         image.resize(
-            (int(width * FaceDetection.IMAGE_DOWNSCALING_FACTOR),
-             int(height * FaceDetection.IMAGE_DOWNSCALING_FACTOR)))
+            (int(width * FaceDetection.IMAGE_SCALING_FACTOR),
+             int(height * FaceDetection.IMAGE_SCALING_FACTOR)))
         image.convert('RGB')
         return list(image.getdata())
 
@@ -46,7 +46,9 @@ class FaceDetection:
             face_distances = face_recognition.face_distance(
                 self.known_faces, face)
             best_match = np.argmin(face_distances)
-            location = face_locations[index]
+            location = tuple(
+                x / FaceDetection.IMAGE_SCALING_FACTOR
+                for x in face_locations[index])
 
             # is the face unknown?
             if (best_match >= FaceDetection.FACE_MATCHING_THRESHOLD):
