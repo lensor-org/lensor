@@ -16,6 +16,7 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
+            apk add --no-cache postgresql-dev
             pip install pipenv
             pipenv install --dev --system --deploy
       - save_cache:
