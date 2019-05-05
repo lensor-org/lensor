@@ -1,7 +1,7 @@
-![CircleCI branch](https://img.shields.io/circleci/project/github/Kombustor/lensor/master.svg)
-![GitHub issues](https://img.shields.io/github/issues/Kombustor/lensor.svg)
-![GitHub](https://img.shields.io/github/license/Kombustor/lensor.svg)
-![CodeFactor](https://www.codefactor.io/repository/github/kombustor/lensor/badge?style=flat-square)
+![CircleCI branch](https://img.shields.io/circleci/project/github/lensor-org/lensor/master.svg)
+![GitHub issues](https://img.shields.io/github/issues/lensor-org/lensor.svg)
+![CodeFactor](https://www.codefactor.io/repository/github/lensor-org/lensor/badge?style=flat-square)
+![GitHub](https://img.shields.io/github/license/lensor-org/lensor.svg)
 
 # Lensor
 
