@@ -3,7 +3,7 @@
 ![CodeFactor](https://www.codefactor.io/repository/github/lensor-org/lensor/badge?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/lensor-org/lensor.svg)
 
-<div style="text-align:center; width:auto; height: 250px;"><img src="docs/lensor_logo.svg" /></div>
+<img src="docs/lensor_logo.svg" width="250" height="250"/>
 
 # Lensor
 
