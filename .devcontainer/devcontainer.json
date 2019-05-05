@@ -1,11 +1,14 @@
 {
-    "dockerFile": "Dockerfile",
-    "context": "..",
-    "postCreateCommand": "pipenv --site-packages install --dev",
+    "name": "lensor",
     "extensions": [
         "ms-python.python",
         "bierner.markdown-preview-github-styles",
         "christian-kohler.path-intellisense",
         "mutantdino.resourcemonitor"
-    ]
+    ],
+    "postCreateCommand": "cd /workspace && pipenv --python=/usr/local/bin/python --site-packages && pipenv install --dev",
+    "dockerComposeFile": "./docker-compose.yml",
+    "workspaceFolder": "/workspace",
+    "service" : "lensor",
+    "shutdownAction": "stopCompose"
 }

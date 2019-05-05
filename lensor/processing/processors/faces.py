@@ -1,6 +1,8 @@
 from PIL import Image
 import face_recognition
 import numpy as np
+from PIL import Image
+from PIL import ImageDraw
 
 
 class FaceDetection:

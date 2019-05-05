@@ -1,6 +1,9 @@
-![CircleCI branch](https://img.shields.io/circleci/project/github/Kombustor/lensor/master.svg)
-![GitHub issues](https://img.shields.io/github/issues/Kombustor/lensor.svg)
-![GitHub](https://img.shields.io/github/license/Kombustor/lensor.svg)
+![CircleCI branch](https://img.shields.io/circleci/project/github/lensor-org/lensor/master.svg)
+![GitHub issues](https://img.shields.io/github/issues/lensor-org/lensor.svg)
+![CodeFactor](https://www.codefactor.io/repository/github/lensor-org/lensor/badge?style=flat-square)
+![GitHub](https://img.shields.io/github/license/lensor-org/lensor.svg)
+
+<img src="docs/lensor_logo.svg" width="250" height="250"/>
 
 # Lensor
 
@@ -35,7 +38,7 @@ TODO
 3. Install dlib as explained [here](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf)
 4. Run `pipenv install --dev` in the project directory.
 5. Run `pipenv run prepare` after installing pipenv to install the git hook.
-6. Start with `pipenv run python main.py`
+6. Start with `pipenv run python lensor.py`
 
 ### Docker
 
@@ -47,7 +50,7 @@ TODO
 1. Follow the official [installation instructions](https://code.visualstudio.com/docs/remote/containers#_installation)
 2. Open the project in VS Code
 3. Use `Ctrl + Shift + P` and run "Reopen Folder in Container"
-5. Start with `pipenv run python main.py`
+5. Start with `pipenv run python lensor.py` (or open the `pipenv shell` and run `python main.py`)
 
 ## Usage
 

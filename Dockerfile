@@ -5,6 +5,9 @@
 ###############
 FROM kombustor/python3-dlib:alpine as dev
 
+# Installing dependencies for psycopg2
+RUN apk add --no-cache postgresql-dev
+
 # Installing pipenv
 RUN pip install pipenv
 

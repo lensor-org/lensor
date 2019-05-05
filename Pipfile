@@ -13,6 +13,8 @@ pre-commit = "*"
 pillow = "*"
 exifread = "*"
 face-recognition = "*"
+sqlalchemy = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
