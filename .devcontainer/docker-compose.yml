@@ -7,9 +7,24 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
     env_file:
-      - db.env
+      - .env/db.env
     networks:
       - internal
+
+  pgadmin4:
+    image: dpage/pgadmin4
+    restart: unless-stopped
+    depends_on:
+    - db
+    volumes:
+    - ${PWD}/.devcontainer/pgadmin4/servers.json:/pgadmin4/servers.json
+    ports:
+    - "8888:80"
+    env_file:
+    - .env/pgadmin4.env
+    networks:
+    - internal
+    - external
 
   lensor:
     build:
@@ -20,7 +35,7 @@ services:
     depends_on:
       - db
     env_file:
-      - db.env
+      - .env/db.env
     networks:
       - internal
       - external
