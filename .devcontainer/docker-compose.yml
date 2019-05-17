@@ -10,7 +10,7 @@ services:
       - .env/db.env
     networks:
       - internal
-    
+
   pgadmin4:
     image: dpage/pgadmin4
     restart: unless-stopped
@@ -41,8 +41,6 @@ services:
       - external
     volumes:
       - ..:/workspace
-    
-
 
 volumes:
   db:
