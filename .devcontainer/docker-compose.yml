@@ -17,9 +17,9 @@ services:
     depends_on:
     - db
     volumes:
-    - ./pgadmin4/server.json:/pgadmin4/server.json
+    - ${PWD}/.devcontainer/pgadmin4/servers.json:/pgadmin4/servers.json
     ports:
-    - "80:80"
+    - "8888:80"
     env_file:
     - .env/pgadmin4.env
     networks:
